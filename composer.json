@@ -1,0 +1,24 @@
+{
+  "name": "ice2038/yandex-page-feeds",
+  "type": "library",
+  "description": "Yandex Page RSS feeds generator (Yandex.News, Yandex.Turbo, Yandex.Zen)",
+  "version": "v1.0.0",
+  "homepage": "https://github.com/ice2038/yandex-page-feeds",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pavel Zima",
+      "email": "iceprocode@yandex.ru",
+      "homepage": "https://github.com/ice2038"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "ext-mbstring": "*"
+  },
+  "autoload": {
+    "psr-4": {
+    "ice2038\\yandex_feeds\\": "src/"
+  }
+  }
+}
