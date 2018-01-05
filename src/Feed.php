@@ -8,22 +8,8 @@ use DOMDocument;
  * Class Feed
  * @package ice2038\YandexPages
  */
-class Feed implements FeedInterface
+class Feed extends AbstractFeed
 {
-    const ENCODING_UTF_8 = 'UTF-8';
-    const ENCODING_WINDOWS_1251 = 'windows-1251';
-    const ENCODING_KOI8_R = 'KOI8-R';
-
-    /** @var ChannelInterface[] */
-    protected $channels = [];
-
-    private $encoding;
-
-    public function __construct(string $encoding = self::ENCODING_UTF_8)
-    {
-        $this->encoding = $encoding;
-    }
-
     public function addChannel(ChannelInterface $channel): FeedInterface
     {
         $this->channels[] = $channel;
@@ -32,7 +18,7 @@ class Feed implements FeedInterface
 
     public function render(): string
     {
-        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="' . $this->encoding
+        $xml = new SimpleXMLElement('<?xml version="1.0" encoding="' . $this->getEncoding()
             . '" ?><rss version="2.0" xmlns:yandex="http://news.yandex.ru" xmlns:media="http://search.yahoo.com/mrss/" xmlns:turbo="http://turbo.yandex.ru" />',
             LIBXML_NOERROR | LIBXML_ERR_NONE | LIBXML_ERR_FATAL);
 
@@ -46,10 +32,5 @@ class Feed implements FeedInterface
         $dom->appendChild($dom->importNode(dom_import_simplexml($xml), true));
         $dom->formatOutput = true;
         return $dom->saveXML();
-    }
-
-    public function __toString(): string
-    {
-        return $this->render();
     }
 }
