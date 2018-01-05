@@ -1,12 +1,10 @@
 <?php
 
-namespace ice2038\yandex_feeds\turbo\interfaces;
-
-use ice2038\yandex_feeds\turbo\SimpleXMLElement;
+namespace ice2038\YandexPages;
 
 /**
  * Interface ItemInterface
- * @package ice2038\YandexTurboPages
+ * @package ice2038\YandexPages
  */
 interface ItemInterface
 {
@@ -60,10 +58,10 @@ interface ItemInterface
 
     /**
      * Append item to the channel
-     * @param TurboChannelInterface $channel
+     * @param ChannelInterface $channel
      * @return ItemInterface
      */
-    public function appendTo(TurboChannelInterface $channel): ItemInterface;
+    public function appendTo(ChannelInterface $channel): ItemInterface;
 
     /**
      * Add list of related items to item

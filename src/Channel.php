@@ -1,17 +1,12 @@
 <?php
 
-namespace ice2038\yandex_feeds\turbo;
-
-use ice2038\yandex_feeds\interfaces\TurboChannelInterface;
-use ice2038\yandex_feeds\interfaces\CounterInterface;
-use ice2038\yandex_feeds\interfaces\FeedInterface;
-use ice2038\yandex_feeds\interfaces\ItemInterface;
+namespace ice2038\YandexPages;
 
 /**
  * Class Channel
- * @package ice2038\YandexTurboPages
+ * @package ice2038\YandexPages
  */
-class TurboChannel implements TurboChannelInterface
+class Channel implements ChannelInterface
 {
     const AD_TYPE_YANDEX = 'Yandex';
     const AD_TYPE_ADFOX = 'AdFox';
@@ -46,33 +41,33 @@ class TurboChannel implements TurboChannelInterface
     /** @var CounterInterface[] */
     protected $counters = [];
 
-    public function title(string $title): TurboChannelInterface
+    public function title(string $title): ChannelInterface
     {
         $title = (mb_strlen($title) > 240) ? mb_substr($title, 0, 239) . '…' : $title;
         $this->title = $title;
         return $this;
     }
 
-    public function link(string $link): TurboChannelInterface
+    public function link(string $link): ChannelInterface
     {
         $this->link = $link;
         return $this;
     }
 
-    public function description(string $description): TurboChannelInterface
+    public function description(string $description): ChannelInterface
     {
         $this->description = $description;
         return $this;
     }
 
-    public function language(string $language): TurboChannelInterface
+    public function language(string $language): ChannelInterface
     {
         $this->language = $language;
         return $this;
     }
 
     public function adNetwork(string $type = self::AD_TYPE_YANDEX, string $id = '',
-                              string $turboAdId, string $code = ''): TurboChannelInterface
+                              string $turboAdId, string $code = ''): ChannelInterface
     {
         $this->adType      = $type;
         $this->adId        = $id;
@@ -82,19 +77,19 @@ class TurboChannel implements TurboChannelInterface
         return $this;
     }
 
-    public function addItem(ItemInterface $item): TurboChannelInterface
+    public function addItem(ItemInterface $item): ChannelInterface
     {
         $this->items[] = $item;
         return $this;
     }
 
-    public function addCounter(CounterInterface $counter): TurboChannelInterface
+    public function addCounter(CounterInterface $counter): ChannelInterface
     {
         $this->counters[] = $counter;
         return $this;
     }
 
-    public function appendTo(FeedInterface $feed): TurboChannelInterface
+    public function appendTo(FeedInterface $feed): ChannelInterface
     {
         $feed->addChannel($this);
         return $this;
@@ -112,8 +107,8 @@ class TurboChannel implements TurboChannelInterface
         }
 
         if ($this->adType &&
-            ((($this->adType == TurboChannel::AD_TYPE_YANDEX) && $this->adId) ||
-                (($this->adType == TurboChannel::AD_TYPE_ADFOX) && $this->adCode))) {
+            ((($this->adType == Channel::AD_TYPE_YANDEX) && $this->adId) ||
+                (($this->adType == Channel::AD_TYPE_ADFOX) && $this->adCode))) {
 
             $adChild = $xml->addChild('yandex:adNetwork', '', 'http://news.yandex.ru');
             $adChild->addAttribute('type', $this->adType);

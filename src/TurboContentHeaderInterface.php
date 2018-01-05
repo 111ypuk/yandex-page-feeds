@@ -1,6 +1,7 @@
 <?php
 
-namespace ice2038\yandex_feeds\turbo\interfaces;
+namespace ice2038\YandexPages;
+
 
 interface TurboContentHeaderInterface
 {

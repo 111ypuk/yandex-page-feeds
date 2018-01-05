@@ -1,13 +1,10 @@
 <?php
 
-namespace ice2038\yandex_feeds\turbo;
-
-use ice2038\yandex_feeds\turbo\interfaces\RelatedItemInterface;
-use ice2038\yandex_feeds\turbo\interfaces\RelatedItemsListInterface;
+namespace ice2038\YandexPages;
 
 /**
  * Class RelatedItem
- * @package ice2038\YandexTurboPages
+ * @package ice2038\YandexPages
  */
 class RelatedItem implements RelatedItemInterface
 {

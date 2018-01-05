@@ -1,13 +1,10 @@
 <?php
 
-namespace ice2038\yandex_feeds\turbo;
-
-use ice2038\yandex_feeds\turbo\interfaces\TurboChannelInterface;
-use ice2038\yandex_feeds\turbo\interfaces\CounterInterface;
+namespace ice2038\YandexPages;
 
 /**
  * Interface CounterInterface
- * @package ice2038\YandexTurboPages
+ * @package ice2038\YandexPages
  */
 class Counter implements CounterInterface
 {
@@ -27,7 +24,7 @@ class Counter implements CounterInterface
         $this->id = $id;
     }
 
-    public function appendTo(TurboChannelInterface $channel): CounterInterface
+    public function appendTo(ChannelInterface $channel): CounterInterface
     {
         $channel->addCounter($this);
         return $this;

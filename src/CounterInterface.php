@@ -1,12 +1,10 @@
 <?php
 
-namespace ice2038\yandex_feeds\turbo\interfaces;
-
-use ice2038\yandex_feeds\turbo\SimpleXMLElement;
+namespace ice2038\YandexPages;
 
 /**
  * Interface CounterInterface
- * @package ice2038\YandexTurboPages
+ * @package ice2038\YandexPages
  */
 interface CounterInterface
 {
@@ -19,10 +17,10 @@ interface CounterInterface
 
     /**
      * Append counter to the channel
-     * @param TurboChannelInterface $channel
+     * @param ChannelInterface $channel
      * @return $this
      */
-    public function appendTo(TurboChannelInterface $channel): CounterInterface;
+    public function appendTo(ChannelInterface $channel): CounterInterface;
 
     /**
      * Return XML object

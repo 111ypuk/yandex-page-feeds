@@ -1,12 +1,12 @@
 <?php
 
-namespace ice2038\yandex_feeds\turbo;
+namespace ice2038\YandexPages;
 
 use SimpleXMLElement as SimpleXMLE;
 
 /**
  * Class SimpleXMLElement
- * @package ice2038\YandexTurboPages
+ * @package ice2038\YandexPages
  */
 class SimpleXMLElement extends SimpleXMLE
 {

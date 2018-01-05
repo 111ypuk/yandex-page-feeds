@@ -1,23 +1,20 @@
 <?php
 
-namespace ice2038\yandex_feeds\turbo;
+namespace ice2038\YandexPages;
 
 use DOMDocument;
-use ice2038\yandex_feeds\interfaces\TurboFeedInterface;
-use ice2038\yandex_feeds\interfaces\TurboChannelInterface;
-use ice2038\yandex_feeds\interfaces\BaseFeedInterface;
 
 /**
  * Class Feed
- * @package ice2038\YandexTurboPages
+ * @package ice2038\YandexPages
  */
-class TurboFeed implements BaseFeedInterface, TurboFeedInterface
+class Feed implements FeedInterface
 {
     const ENCODING_UTF_8 = 'UTF-8';
     const ENCODING_WINDOWS_1251 = 'windows-1251';
     const ENCODING_KOI8_R = 'KOI8-R';
 
-    /** @var TurboChannelInterface[] */
+    /** @var ChannelInterface[] */
     protected $channels = [];
 
     private $encoding;
@@ -27,7 +24,7 @@ class TurboFeed implements BaseFeedInterface, TurboFeedInterface
         $this->encoding = $encoding;
     }
 
-    public function addChannel(TurboChannelInterface $channel): BaseFeedInterface
+    public function addChannel(ChannelInterface $channel): FeedInterface
     {
         $this->channels[] = $channel;
         return $this;

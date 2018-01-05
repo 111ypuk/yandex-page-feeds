@@ -1,12 +1,10 @@
 <?php
 
-namespace ice2038\yandex_feeds\turbo\interfaces;
-
-use ice2038\yandex_feeds\turbo\SimpleXMLElement;
+namespace ice2038\YandexPages;
 
 /**
  * Interface RelatedItemInterface
- * @package ice2038\YandexTurboPages
+ * @package ice2038\YandexPages
  */
 interface RelatedItemInterface
 {

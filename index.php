@@ -1,14 +1,18 @@
 <?php
-include '../vendor/autoload.php';
 
-use ice2038\yandex_feeds\turbo\{
-    TurboFeed, TurboChannel, Counter, Item, RelatedItemsList, RelatedItem
-};
+use ice2038\YandexPages\Channel;
+use ice2038\YandexPages\Counter;
+use ice2038\YandexPages\Feed;
+use ice2038\YandexPages\Item;
+use ice2038\YandexPages\RelatedItem;
+use ice2038\YandexPages\RelatedItemsList;
 
-$feed = new TurboFeed();
+include 'vendor/autoload.php';
+
+$feed = new Feed();
 
 // creates Channel with description and one ad from Yandex Ad Network
-$channel = new TurboChannel();
+$channel = new Channel();
 $channel
     ->title('Channel Title')
     ->link('http://blog.example.com')

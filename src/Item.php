@@ -1,14 +1,10 @@
 <?php
 
-namespace ice2038\yandex_feeds\turbo;
-
-use ice2038\yandex_feeds\turbo\interfaces\TurboChannelInterface;
-use ice2038\yandex_feeds\turbo\interfaces\ItemInterface;
-use ice2038\yandex_feeds\turbo\interfaces\RelatedItemsListInterface;
+namespace ice2038\YandexPages;
 
 /**
  * Class Item
- * @package ice2038\YandexTurboPages
+ * @package ice2038\YandexPages
  */
 class Item implements ItemInterface
 {
@@ -78,7 +74,7 @@ class Item implements ItemInterface
         return $this;
     }
 
-    public function appendTo(TurboChannelInterface $channel): ItemInterface
+    public function appendTo(ChannelInterface $channel): ItemInterface
     {
         $channel->addItem($this);
         return $this;

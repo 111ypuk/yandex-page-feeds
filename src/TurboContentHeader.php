@@ -1,13 +1,12 @@
 <?php
 
-namespace ice2038\yandex_feeds\turbo;
+namespace ice2038\YandexPages;
 
 use DOMDocument;
-use ice2038\yandex_feeds\turbo\interfaces\TurboContentHeaderInterface;
 
 /**
  * Class TurboContentHeader
- * @package ice2038\YandexTurboPages
+ * @package ice2038\YandexPages
  */
 class TurboContentHeader implements TurboContentHeaderInterface
 {
