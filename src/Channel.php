@@ -6,7 +6,7 @@ namespace ice2038\YandexPages;
  * Class Channel
  * @package ice2038\YandexPages
  */
-class Channel implements ChannelInterface
+class Channel extends AbstractChannel implements ChannelInterface
 {
     const AD_TYPE_YANDEX = 'Yandex';
     const AD_TYPE_ADFOX = 'AdFox';

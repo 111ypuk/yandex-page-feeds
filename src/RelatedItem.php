@@ -6,7 +6,7 @@ namespace ice2038\YandexPages;
  * Class RelatedItem
  * @package ice2038\YandexPages
  */
-class RelatedItem implements RelatedItemInterface
+class RelatedItem extends AbstractRelatedItem implements RelatedItemInterface
 {
     /** @var string */
     protected $title;
