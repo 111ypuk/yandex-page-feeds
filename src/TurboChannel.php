@@ -6,7 +6,7 @@ namespace ice2038\YandexPages;
  * Class Channel
  * @package ice2038\YandexPages
  */
-class Channel extends AbstractChannel implements ChannelInterface
+class TurboChannel extends AbstractChannel implements ChannelInterface, TurboChannelInterface
 {
     const AD_TYPE_YANDEX = 'Yandex';
     const AD_TYPE_ADFOX = 'AdFox';
@@ -107,8 +107,8 @@ class Channel extends AbstractChannel implements ChannelInterface
         }
 
         if ($this->adType &&
-            ((($this->adType == Channel::AD_TYPE_YANDEX) && $this->adId) ||
-                (($this->adType == Channel::AD_TYPE_ADFOX) && $this->adCode))) {
+            ((($this->adType == self::AD_TYPE_YANDEX) && $this->adId) ||
+                (($this->adType == self::AD_TYPE_ADFOX) && $this->adCode))) {
 
             $adChild = $xml->addChild('yandex:adNetwork', '', 'http://news.yandex.ru');
             $adChild->addAttribute('type', $this->adType);

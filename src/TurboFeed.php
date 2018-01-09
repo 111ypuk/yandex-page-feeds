@@ -8,7 +8,7 @@ use DOMDocument;
  * Class Feed
  * @package ice2038\YandexPages
  */
-class Feed extends AbstractFeed
+class TurboFeed extends AbstractFeed
 {
     public function addChannel(ChannelInterface $channel): FeedInterface
     {

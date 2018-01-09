@@ -6,7 +6,7 @@ namespace ice2038\YandexPages;
  * Class Item
  * @package ice2038\YandexPages
  */
-class Item extends AbstractItem implements ItemInterface
+class TurboItem extends AbstractItem implements ItemInterface
 {
     /** @var string */
     protected $turbo;
