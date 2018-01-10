@@ -9,12 +9,6 @@ namespace ice2038\YandexPages;
 interface ItemInterface
 {
     /**
-     * Set turbo mode
-     * @param bool $turbo
-     */
-    public function __construct(bool $turbo);
-
-    /**
      * Set item title
      * @param string $title
      * @return ItemInterface
@@ -27,13 +21,6 @@ interface ItemInterface
      * @return ItemInterface
      */
     public function link(string $link): ItemInterface;
-
-    /**
-     * Set page content
-     * @param string $turboContent
-     * @return ItemInterface
-     */
-    public function turboContent(string $turboContent): ItemInterface;
 
     /**
      * Set item category
@@ -62,13 +49,6 @@ interface ItemInterface
      * @return ItemInterface
      */
     public function appendTo(ChannelInterface $channel): ItemInterface;
-
-    /**
-     * Add list of related items to item
-     * @param RelatedItemsListInterface $relatedItemsList
-     * @return ItemInterface
-     */
-    public function addRelatedItemsList(RelatedItemsListInterface $relatedItemsList): ItemInterface;
 
     /**
      * Return XML object

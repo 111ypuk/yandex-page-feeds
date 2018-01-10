@@ -6,7 +6,7 @@ namespace ice2038\YandexPages;
  * Class Item
  * @package ice2038\YandexPages
  */
-class TurboItem extends AbstractItem implements ItemInterface
+class TurboItem extends AbstractItem implements ItemInterface, TurboItemInterface
 {
     /** @var string */
     protected $turbo;
@@ -62,7 +62,7 @@ class TurboItem extends AbstractItem implements ItemInterface
         return $this;
     }
 
-    public function turboContent(string $turboContent): ItemInterface
+    public function turboContent(string $turboContent): TurboItemInterface
     {
         $this->turboContent = $turboContent;
         return $this;
@@ -80,7 +80,7 @@ class TurboItem extends AbstractItem implements ItemInterface
         return $this;
     }
 
-    public function addRelatedItemsList(RelatedItemsListInterface $relatedItemsList): ItemInterface
+    public function addRelatedItemsList(RelatedItemsListInterface $relatedItemsList): TurboItemInterface
     {
         $this->relatedItemsList = $relatedItemsList;
         return $this;

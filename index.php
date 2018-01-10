@@ -5,6 +5,9 @@ use ice2038\YandexPages\{
     Counter, Enclosure, TurboFeed, RelatedItem, RelatedItemsList, TurboChannel, TurboItem, ZenChannel, ZenFeed, ZenItem
 };
 
+/**
+ * Turbo
+ */
 $feed = new TurboFeed();
 
 // creates Channel with description and one ad from Yandex Ad Network
@@ -24,6 +27,7 @@ $googleCounter->appendTo($channel);
 $yandexCounter = new Counter(Counter::TYPE_YANDEX, 12345678);
 $yandexCounter->appendTo($channel);
 
+// displays the generated feed
 $item = new TurboItem();
 $item
     ->title('Thirst page!')
@@ -61,10 +65,11 @@ $item
     ->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
     ->appendTo($channel);
 
-// displays the generated feed
 echo $feed;
 
-
+/**
+ * Zen
+ */
 $feed = new ZenFeed();
 
 $channel = new ZenChannel();
@@ -79,22 +84,26 @@ $item = new ZenItem();
 $item
     ->title('Thirst page!')
     ->link('http://www.example.com/page1.html')
+    ->mediaRating($item::RATING_NON_ADULT)
     ->author('John Smith')
     ->category('Technology')
-    ->turboContent('Some content here!<br>Second content string.')
+    ->description('Desciption<br>Second content string.')
+    ->contentEncoded('Some content here!<br>Second content string.')
     ->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
     ->appendTo($channel);
 
 $enclosure = new Enclosure( 'image/jpeg', 'http://example.com/2023/07/04/pic1.jpg');
 $enclosure->appendTo($item);
 
-$item = new ZenItem(false);
+$item = new ZenItem();
 $item
     ->title('Second page!')
     ->link('http://www.example.com/page2.html')
+    ->mediaRating($item::RATING_NON_ADULT)
     ->author('John Smith')
     ->category('Technology')
-    ->turboContent('Yet another content here!')
+    ->description('Desciption<br>Second content string.')
+    ->contentEncoded('Yet another content here!')
     ->pubDate(strtotime('Tue, 21 Aug 2012 19:50:37 +0900'))
     ->appendTo($channel);
 
