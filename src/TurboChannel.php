@@ -12,18 +12,6 @@ class TurboChannel extends AbstractChannel implements ChannelInterface, TurboCha
     const AD_TYPE_ADFOX = 'AdFox';
 
     /** @var string */
-    protected $title;
-
-    /** @var string */
-    protected $link;
-
-    /** @var string */
-    protected $description;
-
-    /** @var string */
-    protected $language;
-
-    /** @var string */
     protected $adType;
 
     /** @var string */
@@ -34,9 +22,6 @@ class TurboChannel extends AbstractChannel implements ChannelInterface, TurboCha
 
     /** @var string */
     protected $adCode;
-
-    /** @var ItemInterface[] */
-    protected $items = [];
 
     /** @var CounterInterface[] */
     protected $counters = [];

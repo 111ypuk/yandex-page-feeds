@@ -8,21 +8,6 @@ namespace ice2038\YandexPages;
  */
 class ZenChannel extends AbstractChannel implements ChannelInterface
 {
-    /** @var string */
-    protected $title;
-
-    /** @var string */
-    protected $link;
-
-    /** @var string */
-    protected $description;
-
-    /** @var string */
-    protected $language;
-
-    /** @var ItemInterface[] */
-    protected $items = [];
-
     public function title(string $title): ChannelInterface
     {
         $title = (mb_strlen($title) > 240) ? mb_substr($title, 0, 239) . '…' : $title;
